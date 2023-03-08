@@ -8,7 +8,8 @@ from azure.data.tables import TableServiceClient
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
-    table_service_client  = TableServiceClient.from_connection_string(conn_str= os.environ["AzureWebJobsStorage"])
+    table_service_client = TableServiceClient.from_connection_string(
+        conn_str=os.environ["AzureWebJobsStorage"])
     table_client = table_service_client.get_table_client(table_name="Pokedex")
     entities = table_client.list_entities()
     pokedex = []
@@ -20,5 +21,5 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             'PokemonColor': entity['PokemonColor'],
             'PokemonAttacks': entity['PokemonAttacks'] if 'PokemonAttacks' in entity else []
         })
-    
+
     return func.HttpResponse(json.dumps(pokedex))

@@ -5,10 +5,9 @@
       "authLevel": "anonymous",
       "type": "httpTrigger",
       "direction": "in",
-      "route": "pokedex",
+      "route": "pokedex/Create",
       "name": "req",
       "methods": [
-        "get",
         "post"
       ]
     },

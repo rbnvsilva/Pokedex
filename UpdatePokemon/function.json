@@ -4,11 +4,10 @@
     {
       "authLevel": "anonymous",
       "type": "httpTrigger",
+      "route": "pokedex/{pokemonName}",
       "direction": "in",
-      "route": "pokedex",
       "name": "req",
       "methods": [
-        "get",
         "post"
       ]
     },
