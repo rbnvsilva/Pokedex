@@ -8,8 +8,7 @@
       "route": "pokedex",
       "name": "req",
       "methods": [
-        "get",
-        "post"
+        "get"
       ]
     },
     {
